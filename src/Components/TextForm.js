@@ -3,25 +3,35 @@ import React, { useState } from 'react'
 export default function TextForm(props) {
 
     const handleUpClick = () => {
-        setText(text.toUpperCase());
+        if(text.length === 0){
+            props.showAlert("Please enter some text", "danger");
+        }
+        else{
+            setText(text.toUpperCase());
+            props.showAlert("Converted to UPPERCASE!", "success");
+        }
     }
 
     const handleDownClick = () => {
         setText(text.toLowerCase());
-    }
+        props.showAlert("Converted to lowercase!", "success");
+        }
 
     const handleInverseCaseClick = () => {
         let newText = reverseCase(text);
         setText(newText);
+        props.showAlert("Inversed case!", "success");
     }
 
     const handleClearText = (event) => {
         let newText = "";
         setText(newText);
+        props.showAlert("Text cleared!", "success");
     }
 
     const handleCopyText = (event) => {
         navigator.clipboard.writeText(text);
+        props.showAlert("Text copied to clipboard!", "success");
     }
 
     const handleOnChange = (event) => {
