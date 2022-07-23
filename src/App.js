@@ -53,7 +53,6 @@ function App() {
 export default App;
 
 
-/* Created with https://www.css-gradient.com */
 // background: #3030E8;
 // background: -webkit-linear-gradient(top left, #3030E8, #114570);
 // background: -moz-linear-gradient(top left, #3030E8, #114570);
