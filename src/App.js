@@ -26,12 +26,14 @@ function App() {
       document.body.style.backgroundImage = 'linear-gradient(to bottom right, #FFFFFF, #DFDFDF)';
       document.body.style.color = 'black';
       showAlert('Light Mode enabled', 'success');
+      document.title = 'TextUtils - Home';
     }
     else {
       setDarkMode('dark');
       document.body.style.backgroundImage = 'linear-gradient(to bottom right, grey, #122B40)';
       document.body.style.color = 'white';
       showAlert('Dark Mode enabled', 'success');
+      document.title = 'TextUtils - Dark Mode';
     }
   }
 
