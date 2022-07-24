@@ -1,41 +1,45 @@
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 
+export default function About({darkMode}) {
 
-export default function About() {
+    // const [myStyle, setMyStyle] = useState({
+    //     backgroundColor: 'white',
+    //     color: '#333333',
+    //     // border: '2px solid #333333',
+    //     borderRadius: '5px',
+    // })
 
-    const [myStyle, setMyStyle] = useState({
-        backgroundColor: 'white',
-        color: '#333333',
-        // border: '2px solid #333333',
-        borderRadius: '5px',
-    })
+    // const [btnText, setBtnText] = useState("Enable Dark Mode");
 
-    const [btnText, setBtnText] = useState("Enable Dark Mode");
+    // const toggleStyle = () => {
+    //     if(myStyle.backgroundColor === '#333333'){
+    //         setMyStyle({
+    //             backgroundColor: 'white',
+    //             color: '#333333',
+    //             border: '2px solid white',
+    //             borderRadius: '5px',
+    //         })
+    //         setBtnText("Enable Dark Mode");
+    //     }
+    //     else{
+    //         setMyStyle({
+    //             backgroundColor: '#333333',
+    //             color: 'white',
+    //             border: '2px solid #333333',
+    //             borderRadius: '8px'
+    //         })
+    //         setBtnText("Enable Light Mode");
+    //     }
+    // }
 
-    const toggleStyle = () => {
-        if(myStyle.backgroundColor === '#333333'){
-            setMyStyle({
-                backgroundColor: 'white',
-                color: '#333333',
-                border: '2px solid white',
-                borderRadius: '5px',
-            })
-            setBtnText("Enable Dark Mode");
-        }
-        else{
-            setMyStyle({
-                backgroundColor: '#333333',
-                color: 'white',
-                border: '2px solid #333333',
-                borderRadius: '8px'
-            })
-            setBtnText("Enable Light Mode");
-        }
+    let myStyle = {
+        color: darkMode === 'dark'? 'white':'#333333',
+        backgroundColor: darkMode === 'dark'? '#333333':'white',
     }
 
   return (
     <>
-    <div className="container" style = {myStyle}>
+    <div className="container my-3 py-3 rounded-3" style = {myStyle}>
         <div className="accordion" id="accordionExample">
             <h1 className='my-3 mx-3'>About Us</h1>
             <div className="accordion-item">
@@ -73,14 +77,13 @@ export default function About() {
                 <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                 <div className="accordion-body" style = {myStyle}>
                     <strong>Thank You...</strong> We appreciate you using TextUtils. You can find the source code for this project on <code>...Updating Soon</code>.
-                    
                 </div>
                 </div>
             </div>
         </div>
-        <div className="my-3">
+        {/* <div className="my-3">
             <button onClick = {toggleStyle} className='btn btn-primary my-3' type='button'>{btnText}</button>
-        </div>
+        </div> */}
     </div>
     </>
   )
