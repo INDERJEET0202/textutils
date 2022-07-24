@@ -69,7 +69,7 @@ export default function TextForm(props) {
         <div className="container">
             <h1 className='mx-3'>{props.heading}</h1>
             <div className="mb-3">
-                <textarea className='form-control' placeholder='Enter Text here' value = {text} onChange = {handleOnChange} style = {{backgroundColor : props.darkMode == 'dark' ? 'grey' : 'white', color: props.darkMode === 'dark' ? 'white' : '#402743'}} id="myBox" rows="8"></textarea>
+                <textarea className='form-control' placeholder='Enter Text here' value = {text} onChange = {handleOnChange} style = {{backgroundColor : props.darkMode === 'dark' ? 'grey' : 'white', color: props.darkMode === 'dark' ? 'white' : '#402743'}} id="myBox" rows="8"></textarea>
             </div>
             <button disabled = {text.length === 0} type="button" className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to upperCase</button>
             <button disabled = {text.length === 0}  type="button" className="btn btn-primary mx-1 my-1" onClick={handleDownClick}>Convert to lowerCase</button>
